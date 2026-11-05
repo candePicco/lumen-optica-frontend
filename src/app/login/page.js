@@ -11,7 +11,7 @@ export default function LoginPage() {
 
   // Si ya hay sesión, no tiene sentido mostrar el login.
   useEffect(() => {
-    if (!loading && isAuthenticated) router.replace("/admin");
+    if (!loading && isAuthenticated) router.replace("/dashboard");
   }, [loading, isAuthenticated, router]);
 
   return (
