@@ -9,7 +9,7 @@ import { loginSchema } from "@/schemas/loginSchema";
 // Solo permite volver a rutas internas (evita redirigir a otro sitio).
 function destinoSeguro(next) {
   if (next && next.startsWith("/") && !next.startsWith("//")) return next;
-  return "/admin";
+  return "/dashboard";
 }
 
 export default function LoginForm() {
