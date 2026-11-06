@@ -18,8 +18,8 @@ export default async function ProductosPage({ searchParams }) {
   try {
     datos = await obtenerProductos({ search, page });
   } catch (error) {
-    // Un 404 es una página fuera de rango. Cualquier otro error va a error.js.
-    if (error.status !== 404) throw error;
+    // Un 404 después de la página 1 es fuera de rango. Todo lo demás va a error.js.
+    if (error.status !== 404 || page === 1) throw error;
   }
 
   // Página fuera de rango (por ejemplo, después de borrar la última fila):

@@ -16,7 +16,7 @@ export default function BuscadorProductos({ search }) {
         defaultValue={search}
         placeholder="Buscar productos..."
         aria-label="Buscar productos"
-        className="w-full max-w-sm rounded-md border border-slate-300 bg-white px-3 py-2 outline-none focus:border-[#073b63]"
+        className="w-full max-w-sm rounded-md border border-slate-300 bg-white px-3 py-2 text-slate-900 outline-none placeholder:text-slate-400 focus:border-[#073b63]"
       />
 
       <button

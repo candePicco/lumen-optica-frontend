@@ -40,7 +40,7 @@ export default function TablaProductos({ productos }) {
           </tr>
         </thead>
 
-        <tbody>
+        <tbody className="text-slate-700">
           {productos.map((producto) => (
             <tr key={producto.id} className="border-t border-slate-200">
               <td className={`${celdaClass} font-medium text-[#073b63]`}>
