@@ -7,7 +7,7 @@ Está desarrollado con **Next.js (App Router)** y **Tailwind CSS**, y consume la
 | | Enlace |
 |---|---|
 | 🌐 Aplicación desplegada | https://lumen-optica-frontend.vercel.app |
-| 🔌 API del backend | https://lumen-optica-api.onrender.com/api/ |
+| 🔌 Documentación de la API | https://lumen-optica-api.onrender.com/api/docs/ |
 | 🗂️ Repositorio del backend | https://github.com/candePicco/lumen-optica-backend |
 | 📋 Tablero Kanban | https://github.com/users/JLaporte1/projects/1 |
 
@@ -20,9 +20,9 @@ Está desarrollado con **Next.js (App Router)** y **Tailwind CSS**, y consume la
 | Integrante | Responsabilidad |
 |---|---|
 | Candela Picco | Interfaz, página de inicio, Navbar, Footer, contacto y preguntas frecuentes |
-| Mateo Johnston | Productos, conexión con la API y CRUD |
-| Federico Ramirez | Autenticación con JWT, Context API y formularios con React Hook Form + Zod |
-| Juan Laporte | Dashboard, tests y despliegue |
+| Mateo Johnston Desancio | Productos, conexión con la API y CRUD |
+| Federico Antonio Ramirez | Autenticación con JWT, Context API y formularios con React Hook Form + Zod |
+| Juan Ignacio Laporte | Dashboard, tests y despliegue |
 
 ---
 
@@ -153,11 +153,12 @@ Para iniciar sesión hace falta un usuario creado en el backend (por ejemplo con
 | Variable | Descripción | Valor local | Valor en producción |
 |---|---|---|---|
 | `NEXT_PUBLIC_API_URL` | URL base de la API de Django, **sin** `/api` al final | `http://localhost:8000` | `https://lumen-optica-api.onrender.com` |
-| `API_URL` | (Opcional) URL de la API usada solo desde el servidor. Si no está, se usa `NEXT_PUBLIC_API_URL` | — | — |
+| `API_URL` | URL de la API usada por las solicitudes del servidor, **sin** `/api` al final | `http://localhost:8000` | `https://lumen-optica-api.onrender.com` |
 
 Ejemplo de `.env.local`:
 
 ```env
+API_URL=http://localhost:8000
 NEXT_PUBLIC_API_URL=http://localhost:8000
 ```
 
@@ -186,7 +187,7 @@ npm run test
 
 ## Despliegue
 
-- **Frontend:** desplegado en **Vercel** desde la rama `main`. Tiene configurada la variable `NEXT_PUBLIC_API_URL` con la URL del backend.
+- **Frontend:** desplegado en **Vercel** desde la rama `main`. Configurá `API_URL` y `NEXT_PUBLIC_API_URL` con `https://lumen-optica-api.onrender.com` en el entorno **Production**.
 - **Backend:** desplegado en **Render**. Para que el login funcione desde Vercel, el backend tiene que incluir la URL del frontend en `DJANGO_CORS_ALLOWED_ORIGINS`.
 
 ---
