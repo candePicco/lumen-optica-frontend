@@ -1,3 +1,13 @@
+# Lumen Óptica — Frontend
+
+Frontend de Lumen Óptica desarrollado con Next.js y Tailwind CSS.
+
+## Tablero del equipo
+
+El seguimiento de tareas está en [Lumen Óptica — Desarrollo](https://github.com/users/JLaporte1/projects/1).
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
