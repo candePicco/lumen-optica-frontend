@@ -1,10 +1,13 @@
 
 import CatalogoProductos from "@/components/CatalogoProductos";
+import { IMAGENES_PRODUCTOS } from "@/lib/imagenesProductos";
+
+// Indica que el catálogo debe renderizarse dinámicamente
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Productos | Lumen Óptica",
 };
-
 const API_URL = (
   process.env.API_URL ||
   process.env.NEXT_PUBLIC_API_URL ||
@@ -52,7 +55,8 @@ export default async function ProductosPage() {
 
     return {
       ...producto,
-      imagenUrl: imagenPrincipal?.imagen || null,
+
+     imagenUrl: IMAGENES_PRODUCTOS[producto.id] || imagenPrincipal?.imagen || null,
     };
   });
 

@@ -1,6 +1,7 @@
 
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { IMAGENES_PRODUCTOS } from "@/lib/imagenesProductos";
 
 const API_URL = (
   process.env.API_URL ||
@@ -133,7 +134,7 @@ export default async function DetalleProducto({ params }) {
         (imagen) => imagen.principal
       ) || imagenesProducto[0];
 
-    imagenUrl = imagenPrincipal?.imagen || null;
+    imagenUrl = IMAGENES_PRODUCTOS[Number(id)] || imagenPrincipal?.imagen || null;
   } catch (error) {
     console.error(
       "Error al obtener imagen del producto:",
